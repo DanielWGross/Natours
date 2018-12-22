@@ -30,3 +30,24 @@ body {
     margin-bottom: 6rem;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  // To prevent image extending full width of the element
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  // -background-clip currently experimental in Chrome as of Dec 2018
+  -webkit-background-clip: text;
+  background-clip: text;
+  // To see the background-image through the text
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
+}
