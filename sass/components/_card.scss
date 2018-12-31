@@ -59,6 +59,11 @@
     // Currently Experimental as of Dec 2018
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // Clip path breaking overflow / border radius from parent element. Explicitly defining here.
+    // Likely due to experimental feature?
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+
 
     &--1 {
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
@@ -129,5 +134,30 @@
         border-bottom: .1rem solid $color-grey-light-2;
       }
     }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+    margin-bottom: 8rem;
   }
 }
