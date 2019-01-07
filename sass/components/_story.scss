@@ -25,10 +25,39 @@
     clip-path: circle(50% at 50% 50%);
     // TranslateX to create seperation of text from the image
     transform: translateX(-3rem) skewX(12deg);
+    position: relative;
   }
 
   // Need to specify to occupy 100% of parent element
   &__img {
     height: 100%;
+    // Center image inside of container
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    // Stop shaking at the end of animation transition
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%)
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(0.3rem) brightness(80%);
   }
 }
