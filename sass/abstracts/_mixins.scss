@@ -12,3 +12,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// Media Query Manager
+/*
+0 - 600px:        Phone
+600px - 900px:    Tablet Portrait
+900px - 1200px:   Tablet Landscape
+1200px - 1800px:  Normal
+1800px+:          Big
+*/
+
+/*
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {@content};
+  }
+}
